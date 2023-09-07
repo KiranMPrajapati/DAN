@@ -500,6 +500,12 @@ class READ2016DatasetFormatter(OCRDatasetFormatter):
         new_label = sep.join(t["label"] for t in sorted_text_regions)
         return new_label, sorted_text_regions, nb_cols, side
 
+def main():
+    READ2016DatasetFormatter("page", sem_token=True).format()
+    READ2016DatasetFormatter("page", sem_token=False).format()
+    READ2016DatasetFormatter("double_page", sem_token=True).format()
+    READ2016DatasetFormatter("double_page", sem_token=False).format()
+
 
 if __name__ == "__main__":
 

@@ -1,5 +1,9 @@
 import os.path
-
+import sys
+from pathlib import Path
+path=Path(__file__).parent.parent.parent.parent
+print(path)
+sys.path.append(str(path))
 import torch
 from torch.optim import Adam
 from PIL import Image
@@ -138,10 +142,15 @@ def predict(model_path, img_paths):
     prediction = [keep_all_but_tokens(x, layout_tokens) for x in prediction]
     print(prediction)
 
+def main():
+    model_path = "/root/DAN/saved_models/dan_read_page.pt"
+    img_paths = ["/root/DAN/images/test.png", "/root/DAN/images/test2.png"]  # CHANGE WITH YOUR IMAGES PATH
+    predict(model_path, img_paths)
+
 
 if __name__ == "__main__":
 
-    model_path = "outputs/dan_rimes_page/checkpoints/dan_rimes_page.pt"
-    img_paths = ["../../../test.png", "../../../test2.png"]  # CHANGE WITH YOUR IMAGES PATH
+    model_path = "/root/DAN/saved_models/dan_read_page.pt"
+    img_paths = ["/root/DAN/image/a.TIF", "/root/DAN/image/b.TIF"]  # CHANGE WITH YOUR IMAGES PATH
     predict(model_path, img_paths)
 

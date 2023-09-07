@@ -59,7 +59,7 @@ if __name__ == "__main__":
             "dataset_manager": OCRDatasetManager,
             "dataset_class": OCRDataset,
             "datasets": {
-                dataset_name: "../../../Datasets/formatted/{}_{}{}".format(dataset_name, dataset_level, dataset_variant),
+                dataset_name: "/root/DAN/Datasets/formatted/{}_{}{}".format(dataset_name, dataset_level, dataset_variant),
             },
             "train": {
                 "name": "{}-train".format(dataset_name),
